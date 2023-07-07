@@ -41,7 +41,8 @@ sale1 = Sale(price=2390, date_sale='20.03.2023', stock=st1, count=98)
 sale2 = Sale(price=1950, date_sale='18.05.2023', stock=st2, count=114)
 sale3 = Sale(price=2340, date_sale='12.05.2023', stock=st3, count=64)
 sale4 = Sale(price=1200, date_sale='23.05.2023', stock=st4, count=48)
-session.add_all([sale1, sale2, sale3, sale4])
+sale5 = Sale(price=2240, date_sale='28.05.2023', stock=st5, count=199)
+session.add_all([sale1, sale2, sale3, sale4, sale5])
 session.commit()
 
 
