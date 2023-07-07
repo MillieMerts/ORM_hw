@@ -50,10 +50,10 @@ pub_search = input('Введите наименование издательст
 if pub_search.isnumeric():
     for c in session.query(Book.title, Shop.name, Sale.price, Sale.date_sale).join(Publisher).join(Stock).join(Shop).join(Sale).filter(Publisher.id == int(pub_search)).all():
         title_book, name_shop, c_price, c_data = c
-        print(f'{title_book}|{name_shop}|{c_price}|{c_data}')
+        print(f'{title_book} | {name_shop} | {c_price} | {c_data}')
 else:
     for c in session.query(Book.title, Shop.name, Sale.price, Sale.date_sale).join(Publisher).join(Stock).join(Shop).join(Sale).filter(Publisher.name.like(f'%{pub_search}%')).all():
         title_book, name_shop, c_price, c_data = c
-        print(f'{title_book}|{name_shop}|{c_price}|{c_data}')
+        print(f'{title_book} | {name_shop} | {c_price} | {c_data}')
 session.close()
 
